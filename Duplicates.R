@@ -3,6 +3,7 @@
 
 # Only a list of 5194 quality SNPs common across the 20K/50K/480K arrays are exported (based off a list provided by Nicholas Howard).
 # Aaron's MSc samples are combined with genotype data from other available data sets (New Zealand and international datasets).
+# Non-sample triploid cultivars are included to attempt to match to sample triploids.
 
 # PLINK version used: PLINK v1.9.0-b.7.7 64-bit (22 Oct 2024)
 
@@ -69,7 +70,7 @@ dupe_groups <- as.data.frame(do.call(rbind, padded_list))
 dupe_groups <- cbind(Group = seq_len(nrow(dupe_groups)), dupe_groups)
 sample_counts <- rowSums(dupe_groups[, -1] != " ")
 dupe_groups <- add_column(dupe_groups, SampleCount = sample_counts, .after = "Group")
-colnames(dupe_groups) <- c("Group", "SampleCount", "ID1","ID2","ID3","ID4","ID5","ID6")
+colnames(dupe_groups) <- c("Group", "SampleCount", "ID1","ID2","ID3","ID4","ID5","ID6", "ID7", "ID8", "ID9")
 
 # Save .csv of duplicate ID groupings
 write.csv(dupe_groups,"C:/Users/curly/Desktop/Apple Genotyping/Results/LowQC_ID/Duplicates/Duplicate_groups.csv", row.names = FALSE)
