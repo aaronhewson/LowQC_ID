@@ -1,8 +1,10 @@
 # This script performs duplicate analysis, using PLINK identity-by-descent (PI_HAT) metrics.
 # Genotyping results are exported from Axiom Analysis Suite in PLINK .ped/.map file format.
+
 # Only a list of 5194 quality SNPs common across the 20K/50K/480K arrays are exported (based off a list provided by Nicholas Howard).
 # Aaron's MSc samples are combined with genotype data from other available data sets (New Zealand and international datasets).
 
+# PLINK version used: PLINK v1.9.0-b.7.7 64-bit (22 Oct 2024)
 
 # Load packages -----------------------------------------------------------
 library(tibble)
